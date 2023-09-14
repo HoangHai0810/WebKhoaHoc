@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các khoá học cơ bản</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="taskbar-top">
+        <div class="taskbar-top__tt">
+            <div class="taskbar-top__tt--icon" >
+                <a href="#"><i class="fa-solid fa-school"></i></a>
+            </div>
+            <div class="taskbar-top__tt--title">
+                <a href="#">Học lập trình không khó</a>
+            </div>
+        </div>
+        <div class="taskbar-top__search">
+            <div class="taskbar-top__search--icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="taskbar-top__search--input">
+                <input placeholder="Tìm kiếm">
+            </div>
+        </div>
+        <div class="taskbar-top__bell">
+            <i class="fa-regular fa-bell"></i>
+            <div class="taskbar-top__bell--info">
+                <div class="taskbar-top__bell--title">Thông báo của bạn</div>
+                Chưa có thông báo
+            </div>
+        </div>
+        <div class="taskbar-top__login">
+            <a href="#" class="taskbar-top__login--btn" id="buttonlogin">
+                Đăng nhập
+            </a>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="taskbar-left">
+            <a href="#" class="taskbar-left__plus">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+            <a href="#" class="taskbar-left__btn" style="--i:#2e94bc;">
+                <i class="fa-solid fa-house-user"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="taskbar-left__btn" style="--i:#07e869;">
+                <i class="fa-solid fa-road"></i>
+                <span>Road</span>
+            </a>
+            <a href="#" class="taskbar-left__btn" style="--i:#eaed4e;">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Study</span>
+            </a>
+            <a href="#" class="taskbar-left__btn" style="--i:#d614cf;">
+                <i class="fa-brands fa-blogger"></i>
+                <span>Blog</span>
+            </a>
+        </div>
+        <div class="body">
+            <p>Khoá học dành cho bạn</p>
+            <div class="courses">
+                <div class="courses__TP">
+                    <a href="#" id="C" class="courses__TP--NMIT">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Nhập môn IT</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C" class="courses__TP--JSB">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Javascript cơ bản</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C" class="courses__TP--HTMLB">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">HTML,CSS cơ bản</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C" class="courses__TP--WD">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Web designer</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Nhập môn IT</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Nhập môn IT</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Nhập môn IT</a>
+                </div>
+                <div class="courses__TP">
+                    <a href="#" id="C">
+                        <button class="button">Xem khoá học</button>
+                    </a>
+                    <a href="#" id="C1">Nhập môn IT</a>
+                </div>
+            </div>
+            <div id="login">  
+            </div>
+        </div>
+    </div>
+    <script>
+        var Hoten = new Array(100);
+        var ID = new Array(100);
+        var Password = new Array(100);
+        var SDT = new Array(100);
+        var k = 0;
+        var lg = document.getElementById('buttonlogin');
+        lg.addEventListener('click', function(){
+            document.getElementById("login").innerHTML = 
+                `<div class='taskbar-top__login--lg'> 
+                    <a id='login__close' href='#'> 
+                        <i class='fa-solid fa-xmark'></i> 
+                    </a>
+                    <div id="title">Đăng nhập</div>
+                    <div id='error'></div>
+                    <div id="ID">
+                        <div id="ID__title">Tên đăng nhập</div>
+                        <input placeholder="ID" id="input__ID"></input>
+                    </div>
+                    <div id="Password">
+                        <div id="Password__title">Mật khẩu</div>
+                        <input type="password" placeholder="Password" id="input__Password"></input>
+                    </div>
+                    <div id="check">
+                        <input type="checkbox">Nhớ mật khẩu</input>
+                    </div>
+                    <div id="forgot">
+                        Quên mật khẩu?
+                    </div>
+                    <div id="submit">
+                        Đăng nhập
+                    </div>
+                    <div id="signup"> 
+                        Chưa có tài khoản? Hãy đăng kí ngay tại đây
+                        <div id="signup__btn">
+                            Đăng kí
+                        </div>
+                    </div>
+                </div>`;
+            var cls = document.getElementById('login__close');
+            cls.addEventListener('click', function(){
+                document.getElementById("login").innerHTML = '';
+            });
+            var sbm = document.getElementById('submit');
+            sbm.addEventListener('click', function(){
+                for (let i = 0;i<=k;i++)
+                {
+                    if (ID[i] == document.getElementById("input__ID").value && Password[i] == document.getElementById("input__Password").value)
+                    {
+                        document.getElementById("login").innerHTML = '';
+                        document.getElementById("buttonlogin").innerHTML = Hoten[i] + `|Đăng xuất`;  
+                    }
+                    else
+                        document.getElementById("error").innerHTML = "Sai tên đăng nhập hoặc mật khẩu";
+                }
+            });
+            var snu = document.getElementById('signup__btn');
+            snu.addEventListener('click', function(){
+                document.getElementById("login").innerHTML = 
+                `<div class='taskbar-top__login--lg'> 
+                    <a id='login__close' href='#'> 
+                        <i class='fa-solid fa-xmark'></i> 
+                    </a>
+                    <div id="title">Đăng kí</div>
+                    <div id='error'></div>
+                    <div id="Hoten">
+                        <div id="Hoten__title">Họ và tên</div>
+                        <input placeholder="Họ tên" id="input__Hoten"></input>
+                    </div>
+                    <div id="SDT">
+                        <div id="SDT__title">Số điện thoại</div>
+                        <input placeholder="SĐT" id="input__SDT"></input>
+                    </div>
+                    <div id="ID">
+                        <div id="ID__title">Tên đăng nhập</div>
+                        <input placeholder="ID" id="input__ID"></input>
+                    </div>
+                    <div id="Password">
+                        <div id="Password__title">Mật khẩu</div>
+                        <input type="password" placeholder="Password" id="input__Password"></input>
+                    </div>
+                    <div id="submit">
+                        Đăng kí
+                    </div>
+                </div>`;
+                var cls = document.getElementById('login__close');
+                cls.addEventListener('click', function(){
+                    document.getElementById("login").innerHTML = '';
+                });
+                var sbm = document.getElementById('submit');
+                sbm.addEventListener('click', function(){
+                    var dem = 0;
+                    for (let i=0;i<k;i++)
+                        if (document.getElementById("input__ID").value == ID[i])
+                            dem++;
+                    if (document.getElementById("input__Hoten").value == '')
+                    {
+                        document.getElementById('error').innerHTML = "Họ tên trống";
+                    }
+                    else if (document.getElementById("input__SDT").value == '')
+                    {
+                        document.getElementById('error').innerHTML = "Số điện thoại trống";
+                    }
+                    else if (document.getElementById("input__ID").value == '')
+                    {
+                        document.getElementById('error').innerHTML = "Tên đăng nhập trống";
+                    }
+                    else if (document.getElementById("input__Password").value == '')
+                    {
+                        document.getElementById('error').innerHTML = "Mật khẩu trống";
+                    }
+                    else if (dem > 0)
+                    {
+                        document.getElementById('error').innerHTML = "Tên đăng nhập đã tồn tại";
+                    }
+                    else
+                    {
+                        Hoten[k] = document.getElementById("input__Hoten").value;
+                        ID[k] = document.getElementById("input__ID").value;
+                        Password[k] = document.getElementById("input__Password").value;
+                        SDT[k] = document.getElementById("SDT").value;
+                        k++;
+                        document.getElementById("login").innerHTML = 
+                        `<div class='taskbar-top__login--lg'> 
+                            <a id='login__close' href='#'> 
+                                <i class='fa-solid fa-xmark'></i> 
+                            </a>
+                            <div id="title">Đăng kí</div>
+                            Đăng kí thành công
+                        </div>`
+                        var cls = document.getElementById('login__close');
+                        cls.addEventListener('click', function(){
+                        document.getElementById("login").innerHTML = '';
+                        });
+                        var lg = document.getElementById('buttonlogin');
+                        lg.addEventListener('click', function(){
+                            lg.innerHTML = 'Đăng nhập';
+                        });
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html>

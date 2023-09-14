@@ -1,0 +1,598 @@
+*
+{
+    text-decoration-line: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+html
+{
+    background-color: #000;
+}
+a
+{
+    color: rgb(255, 255, 255);
+}
+
+.taskbar-top
+{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: #333;
+    justify-items: flex-start;
+    align-items: center;
+    top : 0;
+    left: 0;
+    right: 0;   
+    z-index: 1;
+}
+
+.taskbar-top
+.taskbar-top__tt
+{
+    width: 50%;
+    display: flex;   
+}
+.taskbar-top
+.taskbar-top__tt
+.taskbar-top__tt--icon
+{
+    width: 10%;
+    margin: auto;
+}
+
+.taskbar-top
+.taskbar-top__tt
+.taskbar-top__tt--title
+{
+    margin-right: 250px;
+    font-size: 20px;
+}
+
+.taskbar-top
+.taskbar-top__search
+{
+    height: 40px;
+    width: 30%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+.taskbar-top
+.taskbar-top__search
+.taskbar-top__search--icon
+{
+    width: 10%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.taskbar-top
+.taskbar-top__search
+.taskbar-top__search--input
+{
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+
+.taskbar-top
+.taskbar-top__search
+.taskbar-top__search--input
+input
+{
+    width: 95%;
+    height: 100%;
+    padding: 0;
+    background-color: #333;
+    box-sizing: border-box;
+    border: none;
+}
+
+.taskbar-top
+.taskbar-top__bell
+{
+    position: relative;
+    transform: translateX(100px);
+    cursor: pointer;
+    scale: 1.3;
+}
+
+.taskbar-top
+.taskbar-top__bell
+.taskbar-top__bell--info
+{
+    position: absolute;
+    background-color: #fff;
+    top: 120%;
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+    right: -20px;
+    display: none;
+}
+
+.taskbar-top
+.taskbar-top__bell
+.taskbar-top__bell--info::before
+{
+    content: '';
+    position: absolute;
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(50% 70%, 0 100%, 100% 100%);
+    transform: translateY(-20px);
+    right: 16px;
+}
+
+.taskbar-top
+.taskbar-top__bell:hover
+.taskbar-top__bell--info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taskbar-top
+.taskbar-top__bell
+.taskbar-top__bell--info
+.taskbar-top__bell--title
+{
+    width: 100%;
+    height: 20px;
+    background-color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.taskbar-top
+.taskbar-top__login
+{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.taskbar-top
+.taskbar-top__login
+a
+{
+    width: 120px;
+    height: 38px;
+    background-color: #2d83d6;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskbar-top
+.taskbar-top__login
+a:hover
+{
+    animation: den 0.2s ease forwards;
+}
+
+.bd
+{
+    display: flex;
+    margin-top: 60px;
+}
+
+.taskbar-left
+{
+    position: fixed;
+    background-color: rgb(152, 152, 152);
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+}
+
+.taskbar-left
+.taskbar-left__plus
+{
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px;
+    background-color: #2d83d6;
+    border-radius: 75px;
+}
+
+.taskbar-left
+.taskbar-left__plus
+i
+{
+    margin: 18px 18px;
+    scale: 1.5;
+}
+
+.taskbar-left
+.taskbar-left__plus:hover
+i
+{
+    animation: lonlen 0.3s linear forwards;
+}
+
+.taskbar-left
+.taskbar-left__plus:not(hover)
+i
+{
+    animation: nhoxuong 0.3s ease forwards;
+}
+
+@keyframes lonlen {
+    0% {
+        scale: 1.5;
+    }
+    100% {
+        scale: 2;
+    }
+    
+}
+
+@keyframes nhoxuong {
+    0% {
+        scale: 2;
+    }
+    100% {
+        scale: 1.5;
+    }
+    
+}
+
+.taskbar-left
+.taskbar-left__btn
+{
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    margin: 5px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.taskbar-left
+.taskbar-left__btn:hover, 
+.taskbar-left
+.taskbar-left__btn:active
+{
+    animation: tora 0.3s ease-out forwards;
+}
+
+
+@keyframes tora {
+    0% {
+        padding: 0;
+        background-color: #333;
+    }
+    100% {
+        padding: 10px;
+        background-color: var(--i);
+    } 
+}
+
+.taskbar-left
+.taskbar-left__btn:not(hover)
+{
+    animation: nholai 0.3s ease-out forwards;
+}
+
+@keyframes nholai {
+    0% {
+        padding: 10px;
+        background-color: rgba(51,51,51,0.7);
+    }
+    100% {
+        padding: 0;
+        background-color: #333;
+    } 
+}
+
+.body
+{
+    margin: -10px 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body
+p:first-child
+{
+    font-size: 30px;
+    color: aliceblue;
+}
+
+
+.bd
+.body
+.taskbar-top__login--lg
+{
+    transform: translateY(-500px);
+    border-radius: 5%;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+a
+{
+    height: 20px;
+    transform: translateX(230px) translateY(10px);
+    color: #333;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#error
+{
+    color: red;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#title
+{
+    margin: 50px auto;
+    font-size: 40px;
+}
+
+
+.bd
+.body
+.taskbar-top__login--lg
+#Password
+{
+    margin: 5px;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#check
+{
+    margin: 5px;
+    transform: translateX(-20px);
+}
+.bd
+.body
+.taskbar-top__login--lg
+#forgot
+{
+    margin: 5px;
+    color: #2d83d6;
+    cursor: pointer;
+    transform: translateX(-20px);
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#submit
+{
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d83d6;
+    border-radius: 20px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#signup
+{
+    color: red;
+}
+
+.bd
+.body
+.taskbar-top__login--lg
+#signup
+#signup__btn
+{
+    margin: 10px auto;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d83d6;
+    border-radius: 20px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.courses
+{
+    display: flex;
+    z-index: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.courses
+.courses__TP
+{
+    margin: 10px 10px;
+    height: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.courses
+.courses__TP
+a#C
+{
+    width: 250px;
+    height: 400px;
+    box-sizing: border-box;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+.courses
+.courses__TP
+.courses__TP--NMIT
+{
+    background-image: url("https://files.fullstack.edu.vn/f8-prod/courses/7.png");
+}
+
+.courses
+.courses__TP
+.courses__TP--JSB
+{
+    background-image: url("https://files.fullstack.edu.vn/f8-prod/courses/1.png");
+}
+
+.courses
+.courses__TP
+.courses__TP--HTMLB
+{
+    background-image: url("https://files.fullstack.edu.vn/f8-prod/courses/2.png");
+}
+
+.courses
+.courses__TP
+.courses__TP--WD
+{
+    background-image: url("https://files.fullstack.edu.vn/f8-prod/courses/3.png");
+}
+
+
+
+.courses
+.courses__TP
+a#C:hover
+{
+    animation: den 0.5s ease forwards;
+}
+@keyframes den {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.courses
+.courses__TP
+a#C:not(hover)
+{
+    animation: sang 0.5s ease forwards;
+}
+
+@keyframes sang {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }   
+}
+
+.courses
+.courses__TP
+a#C
+button
+{
+    margin: auto;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    opacity: 0;
+    cursor: pointer;
+}
+.courses
+.courses__TP
+a#C:hover
+button
+{
+    animation: hien 0.5s ease forwards;
+}
+
+@keyframes hien {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.courses
+.courses__TP
+a#C:not(hover)
+button
+{
+    animation: an 0.5s ease forwards;
+}
+
+@keyframes an {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+.courses
+.courses__TP
+a#C1
+{
+    margin: auto;
+    padding-top: 10px   ;
+}
+
+
+
+
+
+
+
+
+
